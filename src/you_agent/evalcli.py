@@ -80,6 +80,9 @@ def main(
 
 
 def cli() -> None:
+    from .cli import _ensure_utf8_stdio
+
+    _ensure_utf8_stdio()
     app()
 
 

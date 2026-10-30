@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -19,6 +20,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 Executor = Callable[[Path, str], Awaitable[tuple[int, str]]]
+
+# Windows 下子进程默认 GBK 输出，判定脚本里的中文/符号会解码崩；统一强制 UTF-8
+_UTF8_ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
 @dataclass
@@ -58,6 +62,7 @@ async def cli_executor(workdir: Path, prompt: str, model: str, task_timeout: int
         sys.executable, "-m", "you_agent.cli", "-p", prompt, "--no-session", "--model", model,
         "--stats-file", "you-stats.json",
         cwd=str(workdir),
+        env=_UTF8_ENV,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
     )
@@ -90,7 +95,7 @@ class TaskRunner:
         if (src / ".git").exists():
             r = subprocess.run(
                 ["git", "worktree", "add", "--detach", str(base), "HEAD"],
-                cwd=src, capture_output=True, text=True,
+                cwd=src, capture_output=True, text=True, encoding="utf-8", errors="replace",
             )
             if r.returncode == 0:
                 return base
@@ -110,13 +115,15 @@ class TaskRunner:
         started = time.time()
         try:
             if task.setup:
-                subprocess.run(task.setup, shell=True, cwd=workdir, capture_output=True)
+                subprocess.run(task.setup, shell=True, cwd=workdir, capture_output=True, env=_UTF8_ENV)
             agent_exit, _out = await self.executor(workdir, task.prompt)
             check = subprocess.run(task.check, shell=True, cwd=workdir,
-                                   capture_output=True, text=True)
+                                   capture_output=True, text=True, encoding="utf-8",
+                                   errors="replace", env=_UTF8_ENV)
             diff = ""
             if (workdir / ".git").exists():
-                d = subprocess.run(["git", "diff"], cwd=workdir, capture_output=True, text=True)
+                d = subprocess.run(["git", "diff"], cwd=workdir, capture_output=True, text=True,
+                                   encoding="utf-8", errors="replace")
                 diff = (d.stdout or "")[:8000]
             stats: dict = {}
             stats_path = workdir / "you-stats.json"

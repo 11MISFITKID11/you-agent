@@ -11,6 +11,7 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import sys
 import threading
 from contextlib import AsyncExitStack
 from pathlib import Path
@@ -566,7 +567,15 @@ def main(
     asyncio.run(_app())
 
 
+def _ensure_utf8_stdio() -> None:
+    # Windows 控制台/管道默认 GBK，⚙ 等符号会 UnicodeEncodeError；errors=replace 兜底不崩
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+
+
 def cli() -> None:
+    _ensure_utf8_stdio()
     app()  # 必须经 typer 应用入口调用，参数才会被解析（直接调 main() 会拿到 OptionInfo 哨兵）
 
 

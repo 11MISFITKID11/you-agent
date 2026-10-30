@@ -70,7 +70,7 @@ SWE-bench 范式的基准，**按能力维度设计任务**（不只测编码正
 | 环境交互 / git | `t10-changelog`：从 git log 整理变更日志 | 测与真实环境的交互 |
 | 编码-修bug/补功能/检索/批量重构/仓库地图 | t1~t5 | 传统编码与工具使用基线 |
 
-评测维度不只通过率，还有**效率指标**（轮数 / 工具调用数 / token，经 `--stats-file` 采集），
+评测维度不只通过率，还有**效率指标**（轮数 / 工具调用数 / token，评测运行时自动采集），
 报告按能力维度分组，`--compare` 可对比两次运行的逐任务修复/退化。
 
 ```bash
@@ -83,8 +83,8 @@ uv run you-eval my-tasks.jsonl --repo /path/to/project     # 对任意仓库出�
 fixture 仓库以 `evals/fixtures/demo_repo.bundle`（git bundle，含完整提交历史）入库，
 `you-eval` 检测到 `demo_repo/` 缺失时自动从 bundle 克隆还原。
 
-当前基线（DeepSeek，2026-10-28，v0.7）：**21/21（100%）**，效率均值 5.0 轮 / 5.6 次工具调用 /
-11k tokens 每任务，报告见 `evals/reports/`。所有任务判定均为客观校验（单测通过 /
+当前基线（DeepSeek，2026-10-30，v0.7）：**21/21（100%）**，效率均值 6.9 轮 / 7.8 次工具调用 /
+24k tokens 每任务，报告见 `evals/reports/`。所有任务判定均为客观校验（单测通过 /
 `git diff` 零误伤 / 产物内容精确匹配），无人工打分。
 
 会话自动保存到 `~/.you/sessions/--工作目录转义--/<时间戳>_<id>.jsonl`（树形结构，

@@ -1,0 +1,410 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "total": 21,
+  "passed": 9,
+  "pass_rate": 0.429,
+  "total_duration_s": 274.5,
+  "efficiency": {
+    "avg_turns": 9.9,
+    "avg_tool_calls": 11.4,
+    "avg_total_tokens": 47897
+  },
+  "dimensions": {
+    "编码-修bug": {
+      "total": 1,
+      "passed": 0
+    },
+    "编码-补功能": {
+      "total": 3,
+      "passed": 2
+    },
+    "检索": {
+      "total": 3,
+      "passed": 2
+    },
+    "批量重构": {
+      "total": 1,
+      "passed": 0
+    },
+    "仓库地图": {
+      "total": 2,
+      "passed": 1
+    },
+    "迭代纠错": {
+      "total": 3,
+      "passed": 1
+    },
+    "自我修复": {
+      "total": 2,
+      "passed": 0
+    },
+    "多源综合": {
+      "total": 2,
+      "passed": 1
+    },
+    "探索": {
+      "total": 1,
+      "passed": 0
+    },
+    "规范遵循": {
+      "total": 2,
+      "passed": 1
+    },
+    "精确修改": {
+      "total": 2,
+      "passed": 0
+    },
+    "环境交互": {
+      "total": 2,
+      "passed": 1
+    },
+    "git": {
+      "total": 2,
+      "passed": 1
+    },
+    "L2": {
+      "total": 7,
+      "passed": 5
+    },
+    "长上下文": {
+      "total": 1,
+      "passed": 1
+    },
+    "跨文件重构": {
+      "total": 1,
+      "passed": 1
+    },
+    "L1": {
+      "total": 4,
+      "passed": 4
+    },
+    "批量": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "results": [
+    {
+      "id": "t1-fix-divide",
+      "passed": false,
+      "duration_s": 9.8,
+      "tags": [
+        "编码-修bug"
+      ],
+      "stats": {},
+      "check_output": "FAIL: ['divide 结果错误', 'divide 未处理除零']\n",
+      "error": ""
+    },
+    {
+      "id": "t2-slugify",
+      "passed": false,
+      "duration_s": 9.1,
+      "tags": [
+        "编码-补功能"
+      ],
+      "stats": {},
+      "check_output": "line 3, in <module>\n    from strings_util import slugify\nImportError: cannot import name 'slugify' from 'strings_util' (C:\\Users\\15507\\AppData\\Local\\Temp\\you-eval-t2-slugify-5osdia61\\strings_util.py)\n",
+      "error": ""
+    },
+    {
+      "id": "t3-find-todos",
+      "passed": false,
+      "duration_s": 9.3,
+      "tags": [
+        "检索"
+      ],
+      "stats": {},
+      "check_output": "缺少 TODOS.md\n",
+      "error": ""
+    },
+    {
+      "id": "t4-docstrings",
+      "passed": false,
+      "duration_s": 8.5,
+      "tags": [
+        "批量重构"
+      ],
+      "stats": {},
+      "check_output": "缺 docstring: ['add', 'sub', 'mul', 'divide']\n",
+      "error": ""
+    },
+    {
+      "id": "t5-functions-map",
+      "passed": false,
+      "duration_s": 8.6,
+      "tags": [
+        "仓库地图"
+      ],
+      "stats": {},
+      "check_output": "缺少 FUNCTIONS.md\n",
+      "error": ""
+    },
+    {
+      "id": "t6-iter-fix-build",
+      "passed": false,
+      "duration_s": 8.8,
+      "tags": [
+        "迭代纠错",
+        "自我修复"
+      ],
+      "stats": {},
+      "check_output": "  File \"C:\\Users\\15507\\AppData\\Local\\Temp\\you-eval-t6-iter-fix-build-861cth3g\\pipeline\\build.py\", line 3\n    import json form os.path\n                ^^^^\nSyntaxError: invalid syntax\n",
+      "error": ""
+    },
+    {
+      "id": "t7-synthesis",
+      "passed": false,
+      "duration_s": 8.5,
+      "tags": [
+        "多源综合",
+        "探索"
+      ],
+      "stats": {},
+      "check_output": "缺少 summary.md\n",
+      "error": ""
+    },
+    {
+      "id": "t8-spec-driven",
+      "passed": false,
+      "duration_s": 9.2,
+      "tags": [
+        "规范遵循"
+      ],
+      "stats": {},
+      "check_output": "导入失败: No module named 'stats'\n",
+      "error": ""
+    },
+    {
+      "id": "t9-precision",
+      "passed": false,
+      "duration_s": 8.6,
+      "tags": [
+        "精确修改"
+      ],
+      "stats": {},
+      "check_output": "config.py 内容不符合要求（只允许把 DEBUG 改为 False，NAME 保持不变）\n",
+      "error": ""
+    },
+    {
+      "id": "t10-changelog",
+      "passed": false,
+      "duration_s": 8.6,
+      "tags": [
+        "环境交互",
+        "git"
+      ],
+      "stats": {},
+      "check_output": "in <module>\n    commits = [l.strip() for l in r.stdout.splitlines() if l.strip()]\n                                  ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'splitlines'\n",
+      "error": ""
+    },
+    {
+      "id": "t11-iter-fix-build2",
+      "passed": false,
+      "duration_s": 9.0,
+      "tags": [
+        "迭代纠错",
+        "自我修复",
+        "L2"
+      ],
+      "stats": {},
+      "check_output": "  File \"C:\\Users\\15507\\AppData\\Local\\Temp\\you-eval-t11-iter-fix-build2-9a53_v2t\\pipeline\\build2.py\", line 3\n    import json form os.path\n                ^^^^\nSyntaxError: invalid syntax\n",
+      "error": ""
+    },
+    {
+      "id": "t12-precision-10-sentinels",
+      "passed": false,
+      "duration_s": 8.4,
+      "tags": [
+        "精确修改",
+        "L2"
+      ],
+      "stats": {},
+      "check_output": "FAIL：config.py 应只把 NAME 改为 prod，DEBUG 保持 True\n",
+      "error": ""
+    },
+    {
+      "id": "t13-long-context-find",
+      "passed": true,
+      "duration_s": 18.0,
+      "tags": [
+        "长上下文",
+        "检索",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 10,
+        "tool_calls": 13,
+        "messages": 25,
+        "tokens_in": 40051,
+        "tokens_out": 1039,
+        "total_tokens": 41090
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t14-rename-across-files",
+      "passed": true,
+      "duration_s": 14.1,
+      "tags": [
+        "跨文件重构",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 7,
+        "tool_calls": 11,
+        "messages": 20,
+        "tokens_in": 23371,
+        "tokens_out": 703,
+        "total_tokens": 24074
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t15-fix-imports",
+      "passed": true,
+      "duration_s": 10.3,
+      "tags": [
+        "迭代纠错",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 3,
+        "messages": 9,
+        "tokens_in": 10082,
+        "tokens_out": 318,
+        "total_tokens": 10400
+      },
+      "check_output": "{\"ok\": true}\n3\n2026-10-30T21:49:53.311952\n",
+      "error": ""
+    },
+    {
+      "id": "t16-safe-divide",
+      "passed": true,
+      "duration_s": 12.1,
+      "tags": [
+        "编码-补功能",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 6,
+        "messages": 13,
+        "tokens_in": 14768,
+        "tokens_out": 447,
+        "total_tokens": 15215
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t17-api-doc",
+      "passed": true,
+      "duration_s": 18.4,
+      "tags": [
+        "规范遵循",
+        "仓库地图",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 9,
+        "tool_calls": 11,
+        "messages": 22,
+        "tokens_in": 32774,
+        "tokens_out": 1333,
+        "total_tokens": 34107
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t18-hero-notes",
+      "passed": true,
+      "duration_s": 12.8,
+      "tags": [
+        "多源综合",
+        "批量",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 7,
+        "messages": 14,
+        "tokens_in": 15888,
+        "tokens_out": 642,
+        "total_tokens": 16530
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t19-extract-emails",
+      "passed": true,
+      "duration_s": 10.8,
+      "tags": [
+        "检索",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 5,
+        "messages": 11,
+        "tokens_in": 12450,
+        "tokens_out": 414,
+        "total_tokens": 12864
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t20-json-to-csv",
+      "passed": true,
+      "duration_s": 11.7,
+      "tags": [
+        "编码-补功能",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 6,
+        "messages": 13,
+        "tokens_in": 14387,
+        "tokens_out": 353,
+        "total_tokens": 14740
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t21-git-commit",
+      "passed": true,
+      "duration_s": 59.9,
+      "tags": [
+        "环境交互",
+        "git",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 40,
+        "tool_calls": 41,
+        "messages": 84,
+        "tokens_in": 258169,
+        "tokens_out": 3890,
+        "total_tokens": 262059
+      },
+      "check_output": "OK\n",
+      "error": ""
+    }
+  ]
+}
