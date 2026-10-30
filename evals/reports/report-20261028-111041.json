@@ -1,0 +1,44 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "total_duration_s": 58.5,
+  "results": [
+    {
+      "id": "t1-fix-divide",
+      "passed": true,
+      "duration_s": 11.0,
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t2-slugify",
+      "passed": true,
+      "duration_s": 11.9,
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t3-find-todos",
+      "passed": true,
+      "duration_s": 12.4,
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t4-docstrings",
+      "passed": true,
+      "duration_s": 11.6,
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t5-functions-map",
+      "passed": true,
+      "duration_s": 11.6,
+      "check_output": "OK\n",
+      "error": ""
+    }
+  ]
+}

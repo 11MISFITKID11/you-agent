@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.ruff_cache/
+dist/
+.you-audit.jsonl
+# fixture 仓库含嵌套 .git，以 demo_repo.bundle 入库，you-eval 运行时自动克隆还原
+evals/fixtures/demo_repo/

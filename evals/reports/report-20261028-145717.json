@@ -1,0 +1,506 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "total": 21,
+  "passed": 21,
+  "pass_rate": 1.0,
+  "total_duration_s": 316.9,
+  "efficiency": {
+    "avg_turns": 6.8,
+    "avg_tool_calls": 7.7,
+    "avg_total_tokens": 22853
+  },
+  "dimensions": {
+    "编码-修bug": {
+      "total": 1,
+      "passed": 1
+    },
+    "编码-补功能": {
+      "total": 3,
+      "passed": 3
+    },
+    "检索": {
+      "total": 3,
+      "passed": 3
+    },
+    "批量重构": {
+      "total": 1,
+      "passed": 1
+    },
+    "仓库地图": {
+      "total": 2,
+      "passed": 2
+    },
+    "迭代纠错": {
+      "total": 3,
+      "passed": 3
+    },
+    "自我修复": {
+      "total": 2,
+      "passed": 2
+    },
+    "多源综合": {
+      "total": 2,
+      "passed": 2
+    },
+    "探索": {
+      "total": 1,
+      "passed": 1
+    },
+    "规范遵循": {
+      "total": 2,
+      "passed": 2
+    },
+    "精确修改": {
+      "total": 2,
+      "passed": 2
+    },
+    "环境交互": {
+      "total": 2,
+      "passed": 2
+    },
+    "git": {
+      "total": 2,
+      "passed": 2
+    },
+    "L2": {
+      "total": 7,
+      "passed": 7
+    },
+    "长上下文": {
+      "total": 1,
+      "passed": 1
+    },
+    "跨文件重构": {
+      "total": 1,
+      "passed": 1
+    },
+    "L1": {
+      "total": 4,
+      "passed": 4
+    },
+    "批量": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "results": [
+    {
+      "id": "t1-fix-divide",
+      "passed": true,
+      "duration_s": 11.7,
+      "tags": [
+        "编码-修bug"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 4,
+        "messages": 10,
+        "tokens_in": 10709,
+        "tokens_out": 286,
+        "total_tokens": 10995
+      },
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t2-slugify",
+      "passed": true,
+      "duration_s": 12.9,
+      "tags": [
+        "编码-补功能"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 13830,
+        "tokens_out": 388,
+        "total_tokens": 14218
+      },
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t3-find-todos",
+      "passed": true,
+      "duration_s": 14.6,
+      "tags": [
+        "检索"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 7,
+        "messages": 14,
+        "tokens_in": 15826,
+        "tokens_out": 864,
+        "total_tokens": 16690
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t4-docstrings",
+      "passed": true,
+      "duration_s": 11.9,
+      "tags": [
+        "批量重构"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 7,
+        "messages": 14,
+        "tokens_in": 14921,
+        "tokens_out": 544,
+        "total_tokens": 15465
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t5-functions-map",
+      "passed": true,
+      "duration_s": 17.0,
+      "tags": [
+        "仓库地图"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 8,
+        "tool_calls": 9,
+        "messages": 19,
+        "tokens_in": 27800,
+        "tokens_out": 889,
+        "total_tokens": 28689
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t6-iter-fix-build",
+      "passed": true,
+      "duration_s": 23.1,
+      "tags": [
+        "迭代纠错",
+        "自我修复"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 15,
+        "tool_calls": 20,
+        "messages": 37,
+        "tokens_in": 59698,
+        "tokens_out": 1287,
+        "total_tokens": 60985
+      },
+      "check_output": "BUILD OK\n",
+      "error": ""
+    },
+    {
+      "id": "t7-synthesis",
+      "passed": true,
+      "duration_s": 10.2,
+      "tags": [
+        "多源综合",
+        "探索"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 3,
+        "tool_calls": 3,
+        "messages": 8,
+        "tokens_in": 7779,
+        "tokens_out": 247,
+        "total_tokens": 8026
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t8-spec-driven",
+      "passed": true,
+      "duration_s": 12.2,
+      "tags": [
+        "规范遵循"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 14927,
+        "tokens_out": 534,
+        "total_tokens": 15461
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t9-precision",
+      "passed": true,
+      "duration_s": 14.6,
+      "tags": [
+        "精确修改"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 7,
+        "tool_calls": 7,
+        "messages": 16,
+        "tokens_in": 27043,
+        "tokens_out": 475,
+        "total_tokens": 27518
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t10-changelog",
+      "passed": true,
+      "duration_s": 12.6,
+      "tags": [
+        "环境交互",
+        "git"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 14595,
+        "tokens_out": 409,
+        "total_tokens": 15004
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t11-iter-fix-build2",
+      "passed": true,
+      "duration_s": 22.2,
+      "tags": [
+        "迭代纠错",
+        "自我修复",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 13,
+        "tool_calls": 14,
+        "messages": 29,
+        "tokens_in": 47240,
+        "tokens_out": 1306,
+        "total_tokens": 48546
+      },
+      "check_output": "env = prod\nBUILD OK\n",
+      "error": ""
+    },
+    {
+      "id": "t12-precision-10-sentinels",
+      "passed": true,
+      "duration_s": 13.6,
+      "tags": [
+        "精确修改",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 6,
+        "tool_calls": 7,
+        "messages": 15,
+        "tokens_in": 17304,
+        "tokens_out": 474,
+        "total_tokens": 17778
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t13-long-context-find",
+      "passed": true,
+      "duration_s": 16.9,
+      "tags": [
+        "长上下文",
+        "检索",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 8,
+        "tool_calls": 7,
+        "messages": 17,
+        "tokens_in": 28031,
+        "tokens_out": 747,
+        "total_tokens": 28778
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t14-rename-across-files",
+      "passed": true,
+      "duration_s": 16.1,
+      "tags": [
+        "跨文件重构",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 6,
+        "tool_calls": 9,
+        "messages": 17,
+        "tokens_in": 18828,
+        "tokens_out": 597,
+        "total_tokens": 19425
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t15-fix-imports",
+      "passed": true,
+      "duration_s": 13.5,
+      "tags": [
+        "迭代纠错",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 13545,
+        "tokens_out": 386,
+        "total_tokens": 13931
+      },
+      "check_output": "{\"ok\": true}\n3\n2026-10-28T22:56:44.850354\n",
+      "error": ""
+    },
+    {
+      "id": "t16-safe-divide",
+      "passed": true,
+      "duration_s": 12.3,
+      "tags": [
+        "编码-补功能",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 14205,
+        "tokens_out": 378,
+        "total_tokens": 14583
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t17-api-doc",
+      "passed": true,
+      "duration_s": 13.3,
+      "tags": [
+        "规范遵循",
+        "仓库地图",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 7,
+        "messages": 14,
+        "tokens_in": 15206,
+        "tokens_out": 644,
+        "total_tokens": 15850
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t18-hero-notes",
+      "passed": true,
+      "duration_s": 19.5,
+      "tags": [
+        "多源综合",
+        "批量",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 11,
+        "tool_calls": 14,
+        "messages": 27,
+        "tokens_in": 39474,
+        "tokens_out": 1137,
+        "total_tokens": 40611
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t19-extract-emails",
+      "passed": true,
+      "duration_s": 25.0,
+      "tags": [
+        "检索",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 12,
+        "tool_calls": 12,
+        "messages": 26,
+        "tokens_in": 40564,
+        "tokens_out": 956,
+        "total_tokens": 41520
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t20-json-to-csv",
+      "passed": true,
+      "duration_s": 11.5,
+      "tags": [
+        "编码-补功能",
+        "L1"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 6,
+        "messages": 13,
+        "tokens_in": 14259,
+        "tokens_out": 336,
+        "total_tokens": 14595
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t21-git-commit",
+      "passed": true,
+      "duration_s": 12.2,
+      "tags": [
+        "环境交互",
+        "git",
+        "L2"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 4,
+        "messages": 10,
+        "tokens_in": 10956,
+        "tokens_out": 297,
+        "total_tokens": 11253
+      },
+      "check_output": "OK\n",
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+[project]
+name = "you-agent"
+version = "0.7.0"
+description = "you-agent —— 你的编码智能体（Python 内核，参照 Pi agent harness 设计）"
+readme = "README.md"
+authors = [{ name = "you-agent contributors" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+keywords = ["ai", "agent", "coding-agent", "llm", "cli", "deepseek"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Code Generators",
+]
+dependencies = [
+    "litellm>=1.70",
+    "mcp>=1.0",
+    "pydantic>=2.7",
+    "typer>=0.12",
+    "rich>=13.7",
+    "httpx>=0.27",
+    "textual>=0.60",
+]
+
+[project.urls]
+Homepage = "https://github.com/11MISFITKID11/you-agent"
+Repository = "https://github.com/11MISFITKID11/you-agent"
+
+[project.scripts]
+you = "you_agent.cli:cli"
+you-eval = "you_agent.evalcli:cli"
+you-tui = "you_agent.tui:main"
+
+[dependency-groups]
+dev = ["pytest>=8.2", "ruff>=0.5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/you_agent"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["evals"]  # 评测 fixture 含故意埋的错误代码（t6 迭代纠错任务）；注意必须用 extend 而不是覆盖默认排除
+
+[tool.ruff.lint]
+ignore = [
+    "B008",     # typer.Option 在默认值中调用是该框架的标准写法
+    "PLW1510",  # git/检查点子进程返回码由调用方容错处理，无需 check
+    "ASYNC221", # 隔离/清理路径有意使用阻塞 subprocess（简化并发模型，见 runner.py 注释）
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

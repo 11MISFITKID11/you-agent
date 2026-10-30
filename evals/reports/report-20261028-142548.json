@@ -1,0 +1,261 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "total": 10,
+  "passed": 10,
+  "pass_rate": 1.0,
+  "total_duration_s": 125.9,
+  "efficiency": {
+    "avg_turns": 5.5,
+    "avg_tool_calls": 6.3,
+    "avg_total_tokens": 15598
+  },
+  "dimensions": {
+    "编码-修bug": {
+      "total": 1,
+      "passed": 1
+    },
+    "编码-补功能": {
+      "total": 1,
+      "passed": 1
+    },
+    "检索": {
+      "total": 1,
+      "passed": 1
+    },
+    "批量重构": {
+      "total": 1,
+      "passed": 1
+    },
+    "仓库地图": {
+      "total": 1,
+      "passed": 1
+    },
+    "迭代纠错": {
+      "total": 1,
+      "passed": 1
+    },
+    "自我修复": {
+      "total": 1,
+      "passed": 1
+    },
+    "多源综合": {
+      "total": 1,
+      "passed": 1
+    },
+    "探索": {
+      "total": 1,
+      "passed": 1
+    },
+    "规范遵循": {
+      "total": 1,
+      "passed": 1
+    },
+    "精确修改": {
+      "total": 1,
+      "passed": 1
+    },
+    "环境交互": {
+      "total": 1,
+      "passed": 1
+    },
+    "git": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "results": [
+    {
+      "id": "t1-fix-divide",
+      "passed": true,
+      "duration_s": 10.2,
+      "tags": [
+        "编码-修bug"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 3,
+        "messages": 9,
+        "tokens_in": 10043,
+        "tokens_out": 270,
+        "total_tokens": 10313
+      },
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t2-slugify",
+      "passed": true,
+      "duration_s": 10.6,
+      "tags": [
+        "编码-补功能"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 4,
+        "tool_calls": 5,
+        "messages": 11,
+        "tokens_in": 9948,
+        "tokens_out": 511,
+        "total_tokens": 10459
+      },
+      "check_output": "ALL PASS\n",
+      "error": ""
+    },
+    {
+      "id": "t3-find-todos",
+      "passed": true,
+      "duration_s": 16.0,
+      "tags": [
+        "检索"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 8,
+        "tool_calls": 10,
+        "messages": 20,
+        "tokens_in": 24787,
+        "tokens_out": 1035,
+        "total_tokens": 25822
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t4-docstrings",
+      "passed": true,
+      "duration_s": 11.8,
+      "tags": [
+        "批量重构"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 12415,
+        "tokens_out": 566,
+        "total_tokens": 12981
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t5-functions-map",
+      "passed": true,
+      "duration_s": 14.5,
+      "tags": [
+        "仓库地图"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 7,
+        "tool_calls": 8,
+        "messages": 17,
+        "tokens_in": 21630,
+        "tokens_out": 602,
+        "total_tokens": 22232
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t6-iter-fix-build",
+      "passed": true,
+      "duration_s": 12.9,
+      "tags": [
+        "迭代纠错",
+        "自我修复"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 6,
+        "tool_calls": 9,
+        "messages": 17,
+        "tokens_in": 15634,
+        "tokens_out": 773,
+        "total_tokens": 16407
+      },
+      "check_output": "BUILD OK\n",
+      "error": ""
+    },
+    {
+      "id": "t7-synthesis",
+      "passed": true,
+      "duration_s": 10.1,
+      "tags": [
+        "多源综合",
+        "探索"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 3,
+        "tool_calls": 4,
+        "messages": 9,
+        "tokens_in": 7556,
+        "tokens_out": 281,
+        "total_tokens": 7837
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t8-spec-driven",
+      "passed": true,
+      "duration_s": 12.5,
+      "tags": [
+        "规范遵循"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 13334,
+        "tokens_out": 563,
+        "total_tokens": 13897
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t9-precision",
+      "passed": true,
+      "duration_s": 14.9,
+      "tags": [
+        "精确修改"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 8,
+        "tool_calls": 9,
+        "messages": 19,
+        "tokens_in": 21774,
+        "tokens_out": 516,
+        "total_tokens": 22290
+      },
+      "check_output": "OK\n",
+      "error": ""
+    },
+    {
+      "id": "t10-changelog",
+      "passed": true,
+      "duration_s": 12.4,
+      "tags": [
+        "环境交互",
+        "git"
+      ],
+      "stats": {
+        "model": "deepseek/deepseek-chat",
+        "turns": 5,
+        "tool_calls": 5,
+        "messages": 12,
+        "tokens_in": 13362,
+        "tokens_out": 386,
+        "total_tokens": 13748
+      },
+      "check_output": "OK\n",
+      "error": ""
+    }
+  ]
+}

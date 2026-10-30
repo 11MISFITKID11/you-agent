@@ -1,0 +1,21 @@
+{"id": "t1-fix-divide", "prompt": "calc.py 的 divide 函数有 bug：实现被误写为减法，且未处理除零。请修复为正确的除法，除数为 0 时抛出 ValueError。完成后运行 python test_calc.py，必须输出 ALL PASS。", "check": "python test_calc.py", "tags": ["编码-修bug"]}
+{"id": "t2-slugify", "prompt": "在 strings_util.py 中实现 slugify(s)：转小写、去除标点、连续空白折叠为单个连字符并去掉首尾连字符（如 'A B! C' -> 'a-b-c'）。完成后运行 python test_strings.py，必须输出 ALL PASS。", "check": "python test_strings.py", "tags": ["编码-补功能"]}
+{"id": "t3-find-todos", "prompt": "检索本项目中所有包含 TODO 的行，把 '文件:行号:内容' 逐行写入 TODOS.md（至少覆盖 notes.txt 里的 TODO）。", "check": "python check_todo.py", "tags": ["检索"]}
+{"id": "t4-docstrings", "prompt": "给 calc.py 中每个顶层函数补充一行中文 docstring，不要改变任何函数的逻辑。完成后运行 python check_docs.py，必须输出 OK。", "check": "python check_docs.py", "tags": ["批量重构"]}
+{"id": "t5-functions-map", "prompt": "列出本项目中定义的全部函数名及所在文件（可用 repo_map 或 grep），写入 FUNCTIONS.md，每行格式：函数名 (文件名)。完成后运行 python check_funcs.py，必须输出 OK。", "check": "python check_funcs.py", "tags": ["仓库地图"]}
+{"id": "t6-iter-fix-build", "prompt": "python pipeline/build.py 目前无法运行（存在多处不同类型的错误）。请反复 运行->看报错->修复，直到输出 BUILD OK。", "check": "python pipeline/build.py", "tags": ["迭代纠错", "自我修复"]}
+{"id": "t7-synthesis", "prompt": "阅读 data/heroes.json 与 data/items.json 两个文件，做综合分析后写入 summary.md：第一行是所有 price>100 的物品名（逗号分隔），第二行是攻击力(atk)最高的英雄名。不要把低价物品写进去。", "check": "python check_summary.py", "tags": ["多源综合", "探索"]}
+{"id": "t8-spec-driven", "prompt": "按 SPEC.md 的规格在项目根目录实现 stats.py（mean/median/top_k 三个函数，注意边界行为）。完成后运行 python check_stats.py，必须输出 OK。", "check": "python check_stats.py", "tags": ["规范遵循"]}
+{"id": "t9-precision", "prompt": "只把 config.py 里的 DEBUG 改为 False：不得修改 NAME，不得改动任何其他已跟踪文件（哨兵文件尤其不许动），也不要创建无关文件。完成后运行 python check_precision.py，必须输出 OK。", "check": "python check_precision.py", "tags": ["精确修改"]}
+{"id": "t10-changelog", "prompt": "用 git log 查看本仓库最近 3 条提交，把它们整理成 CHANGELOG.md：每行一条，从新到旧，格式为 'hash前7位 提交说明'。完成后运行 python check_change_log.py，必须输出 OK。", "check": "python check_change_log.py", "tags": ["环境交互", "git"]}
+{"id": "t11-iter-fix-build2", "prompt": "python pipeline/build2.py 存在 5 处不同类型的错误（语法/名字/键名/属性访问/逻辑）。请反复 运行->看报错->修复，直到输出 BUILD OK。", "check": "python pipeline/build2.py", "tags": ["迭代纠错", "自我修复", "L2"]}
+{"id": "t12-precision-10-sentinels", "prompt": "只把 config.py 里的 NAME 从 \"demo\" 改为 \"prod\"：DEBUG 保持 True，不得改动任何其他已跟踪文件（10 个哨兵文件尤其不许动）。完成后 python check_precision10.py 必须输出 OK。", "check": "python check_precision10.py", "tags": ["精确修改", "L2"]}
+{"id": "t13-long-context-find", "prompt": "在 data/big_records.txt（500 行）中找出所有 status=ERROR 且 code 以 X9 开头的记录，把每条的 REC 编号写入 found.txt（每行一个编号）。完成后 python check_found.py 必须输出 OK。", "check": "python check_found.py", "tags": ["长上下文", "检索", "L2"]}
+{"id": "t14-rename-across-files", "prompt": "把 strings_util.py 里的 shout 函数重命名为 announce，并同步更新所有调用方（如 caller.py），保证 python caller.py 仍能输出 HI!。完成后 python check_rename.py 必须输出 OK。", "check": "python check_rename.py", "tags": ["跨文件重构", "L2"]}
+{"id": "t15-fix-imports", "prompt": "broken_module.py 的三行 import 全都写错了模块名，修复后运行它应打印三行输出。", "check": "python broken_module.py", "tags": ["迭代纠错", "L1"]}
+{"id": "t16-safe-divide", "prompt": "给 calc.py 增加函数 safe_divide(a, b)：正常除法返回结果；除数为 0 时返回 None（不抛异常）。完成后 python check_safe_divide.py 必须输出 OK。", "check": "python check_safe_divide.py", "tags": ["编码-补功能", "L1"]}
+{"id": "t17-api-doc", "prompt": "用 AST（或逐文件分析）为 calc.py 和 strings_util.py 的全部顶层函数生成 API.md 文档，每个函数至少一行：函数名与所在文件。完成后 python check_api.py 必须输出 OK。", "check": "python check_api.py", "tags": ["规范遵循", "仓库地图", "L2"]}
+{"id": "t18-hero-notes", "prompt": "读取 data/heroes.json，为每个英雄在 notes/ 目录下创建 <英雄名>.md 文件，内容包含其 atk 和 role。完成后 python check_notes.py 必须输出 OK。", "check": "python check_notes.py", "tags": ["多源综合", "批量", "L2"]}
+{"id": "t19-extract-emails", "prompt": "从 data/big_records.txt 提取所有 email 地址，去重后写入 emails.txt（每行一个）。完成后 python check_emails.py 必须输出 OK。", "check": "python check_emails.py", "tags": ["检索", "L1"]}
+{"id": "t20-json-to-csv", "prompt": "把 data/heroes.json 转换为 data/heroes.csv，列为 name,atk,role。完成后 python check_csv.py 必须输出 OK。", "check": "python check_csv.py", "tags": ["编码-补功能", "L1"]}
+{"id": "t21-git-commit", "prompt": "把当前工作区所有改动 git add 并提交，提交说明必须精确为：chore: 评测提交任务。完成后 python check_gitcommit.py 必须输出 OK。", "check": "python check_gitcommit.py", "tags": ["环境交互", "git", "L2"]}
